@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pay after approval · After. Harbor $199/mo</title>
+  <meta name="description" content="After. Harbor charges $199/mo membership only after clinician approval. Nothing charged before approval. Compounded medications are not FDA-approved." />
+  <meta name="theme-color" content="#f7f3ee" />
+  <style>
+    :root{--bg:#f7f3ee;--ink:#2c2420;--ink-muted:#6b5e55;--accent:#8b4a3a;--accent-hover:#6f3a2e;--card:#fffcf8;--line:#e2d8cd;--radius:14px;--max:560px;--serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;--sans:"Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",Arial,sans-serif}
+    *{box-sizing:border-box}body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.55;font-size:17px}
+    a{color:var(--accent)}.wrap{width:min(100% - 2rem,var(--max));margin-inline:auto}
+    .site-header{padding:1rem 0;border-bottom:1px solid var(--line)}.site-header .inner{display:flex;justify-content:space-between;align-items:center;width:min(100% - 2rem,var(--max));margin-inline:auto}
+    .logo{font-family:var(--serif);font-weight:600;font-size:1.35rem;text-decoration:none;color:var(--ink)}.logo .dot{color:var(--accent)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:.85rem 1.35rem;border-radius:999px;border:none;font:inherit;font-weight:600;text-decoration:none;cursor:pointer;width:100%}
+    .btn-soft{background:var(--accent);color:#fff}.btn-soft:hover{background:var(--accent-hover)}.btn-ghost{background:transparent;color:var(--accent);border:1px solid var(--line)}
+    .btn[aria-disabled="true"]{opacity:.55;pointer-events:none;cursor:not-allowed}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:1.75rem 1.5rem;margin:2.25rem auto}
+    h1{font-family:var(--serif);font-size:clamp(1.55rem,4vw,2rem);margin:0 0 .75rem;line-height:1.25}
+    .price{font-family:var(--serif);font-size:1.75rem;margin:1rem 0 .35rem}
+    p{color:var(--ink-muted);margin:0 0 .85rem}.micro{font-size:.85rem;color:var(--ink-muted)}
+    .badge{display:inline-block;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--accent);background:#faf4f1;border:1px solid var(--line);border-radius:999px;padding:.35rem .7rem;margin-bottom:1rem}
+    ul{margin:.5rem 0 1.25rem;padding:0 0 0 1.1rem;color:var(--ink-muted)}li{margin:.35rem 0}
+    .actions{display:grid;gap:.75rem;margin-top:1.25rem}
+    footer{padding:2rem 0;font-size:.78rem;color:var(--ink-muted);text-align:center}
+  </style>
+</head>
+<body>
+  <header class="site-header"><div class="inner"><a class="logo" href="../">After<span class="dot">.</span> Harbor</a><a href="../quiz.html">Quiz</a></div></header>
+  <main class="wrap">
+    <div class="card">
+      <span class="badge">Pay after approval</span>
+      <h1>Your membership, when a clinician says yes</h1>
+      <p class="price">$199<span style="font-size:1rem;font-family:var(--sans);color:var(--ink-muted)">/mo all-in</span></p>
+      <p>Cash-pay · flat as dose is paced · cancel anytime*</p>
+      <ul>
+        <li>Medication as prescribed (FDA-approved options when appropriate, or compounded from a licensed pharmacy when clinically individualized)</li>
+        <li>Clinician review &amp; check-ins</li>
+        <li>Door shipping from a U.S. compounding pharmacy partner</li>
+        <li><strong style="color:var(--ink)">Nothing charged before clinician approval</strong></li>
+      </ul>
+      <div class="actions">
+        <!-- Stripe Payment Link / Checkout wires here when account is ready. Free Stripe signup → Payment Link. -->
+        <a class="btn btn-soft" id="pay-btn" href="#stripe-pending" aria-disabled="true" title="Stripe Payment Link not connected yet">Complete membership — $199/mo</a>
+        <p class="micro" id="pay-note" style="text-align:center;margin:0">Payment stub: Stripe Payment Link not connected yet. You’ll only be asked to pay after approval. Ops: paste Payment Link URL into this page’s <code>pay-btn</code> href.</p>
+        <a class="btn btn-ghost" href="../confirmed/">I’ve been approved — see next steps</a>
+        <a class="btn btn-ghost" href="../thank-you/">Still waiting on review</a>
+      </div>
+      <p class="micro" style="margin-top:1.25rem">Compounded medications are not FDA-approved and are not the same as brand-name medicines. Membership ≠ prescription guarantee. Individual results vary. MVP stub — clinical + legal review before paid ads.</p>
+    </div>
+  </main>
+  <footer class="wrap">© 2026 After. Harbor · *Cancel-anytime language must match live checkout.</footer>
+  <script>
+    // When Stripe Payment Link is ready, set window.AFTER_HARBOR_STRIPE_LINK = 'https://buy.stripe.com/...'
+    (function(){
+      var link = window.AFTER_HARBOR_STRIPE_LINK || '';
+      var btn = document.getElementById('pay-btn');
+      var note = document.getElementById('pay-note');
+      if (link && /^https:\/\/buy\.stripe\.com\//.test(link)) {
+        btn.href = link;
+        btn.removeAttribute('aria-disabled');
+        note.textContent = 'Secure Stripe Checkout · $199/mo all-in · charged only on this approved path.';
+      }
+    })();
+  </script>
+</body>
+</html>

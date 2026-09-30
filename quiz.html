@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>See if you qualify · BloomRx</title>
-  <meta name="description" content="~2-minute BloomRx eligibility quiz. Clinician reviews your answers. $199/mo all-in if prescribed — nothing charged before approval." />
+  <title>See if you qualify · After. Harbor</title>
+  <meta name="description" content="~2-minute After. Harbor eligibility quiz. A licensed clinician reviews your answers. $199/mo membership if prescribed — nothing charged before approval. Compounded medications are not FDA-approved." />
   <meta name="theme-color" content="#f7f3ee" />
   <style>
     :root {
@@ -50,7 +50,7 @@
       font-family: var(--serif); font-weight: 600; font-size: 1.25rem;
       text-decoration: none; color: var(--ink);
     }
-    .logo span { color: var(--accent); }
+    .logo .dot { color: var(--accent); }
     .price-chip {
       font-size: 0.8rem; font-weight: 600; color: var(--accent);
       border: 1px solid var(--line); background: #fff; border-radius: 999px;
@@ -186,7 +186,7 @@
 <body>
   <header class="site-header">
     <div class="inner">
-      <a class="logo" href="./">Bloom<span>Rx</span></a>
+      <a class="logo" href="./">After<span class="dot">.</span> Harbor</a>
       <span class="price-chip">$199/mo all-in</span>
     </div>
   </header>
@@ -205,10 +205,10 @@
     <!-- INTRO -->
     <section class="screen active" id="screen-intro" data-kind="intro">
       <div class="wrap">
-        <h1>See if compounded GLP-1 care fits you</h1>
+        <h1>See if After. Harbor care fits you</h1>
         <p class="lede">
           Twelve short questions. A licensed clinician reviews your answers — usually within 24 hours.
-          If you’re a fit, your plan is <strong>$199/mo all-in</strong>. Nothing charged before approval.
+          If you’re a fit and medication is appropriate, membership is <strong>$199/mo all-in</strong>. Nothing charged before clinician approval. A clinician may decline.
         </p>
         <ul class="lede" style="padding-left:1.2rem;margin-bottom:1.5rem">
           <li>Goals, weight cues, meds &amp; soft safety screen</li>
@@ -448,7 +448,7 @@
     <section class="screen" id="screen-q12" data-q="12" data-key="contact">
       <div class="wrap">
         <p class="q-label">Best contact for clinician follow-up</p>
-        <p class="hint">We’ll only use this to reach you about your BloomRx review.</p>
+        <p class="hint">We’ll only use this to reach you about your After. Harbor eligibility review.</p>
         <div class="form-group">
           <label for="name">Full name</label>
           <input type="text" id="name" autocomplete="name" placeholder="Jane Doe" />
@@ -466,7 +466,7 @@
           <button type="button" class="btn btn-ghost btn-prev">Back</button>
           <button type="button" class="btn btn-hard btn-block" id="btn-submit">Submit for clinician review</button>
         </div>
-        <p class="micro">By submitting, you agree we may contact you about BloomRx care. Not medical advice. Destination inbox: shamapsychmd@gmail.com (ops).</p>
+        <p class="micro">By submitting, you agree we may contact you about After. Harbor care. Not medical advice. Individual results vary. Compounded medications are not FDA-approved. Leads go to the After. Harbor Google Sheet.</p>
       </div>
     </section>
 
@@ -477,11 +477,11 @@
           <div class="icon-circle good">✓</div>
           <h2>Thank you — a clinician is reviewing</h2>
           <p class="ok">We received your quiz.</p>
-          <p>A licensed clinician will review your answers — typically within 24 hours. If you’re a fit, next step is your BloomRx plan at <strong>$199/mo all-in</strong>.</p>
+          <p>A licensed clinician will review your answers — typically within 24 hours. If you’re a fit and medication is appropriate, next step is your After. Harbor membership at <strong>$199/mo all-in</strong>.</p>
           <p><strong>Nothing is charged before approval.</strong></p>
           <div class="actions">
-            <a class="btn btn-ghost" href="./">Back to BloomRx home</a>
-            <button type="button" class="btn btn-soft" id="btn-mailto">Email a copy to ops</button>
+            <a class="btn btn-soft" href="./thank-you/">Continue</a>
+            <a class="btn btn-ghost" href="./payment/">If approved — payment info</a>
             <button type="button" class="btn btn-ghost" id="btn-export">Download my answers (JSON)</button>
           </div>
           <p class="micro" id="thanks-meta"></p>
@@ -495,10 +495,10 @@
         <div class="result-card">
           <div class="icon-circle soft">—</div>
           <h2>We’re not the right fit right now</h2>
-          <p>Based on what you shared, BloomRx compounded GLP-1 care is usually not appropriate. That doesn’t mean you’re alone — please talk with your own clinician about safer options for you.</p>
+          <p>Based on what you shared, After. Harbor medication pathways are usually not appropriate right now. That doesn’t mean you’re alone — please talk with your own clinician about safer options for you.</p>
           <p>We still saved your contact so ops can follow up kindly if you asked us to, but we will <strong>not</strong> start a prescribing path from this quiz.</p>
           <div class="actions">
-            <a class="btn btn-soft" href="./">Back to BloomRx home</a>
+            <a class="btn btn-soft" href="./">Back to After. Harbor home</a>
             <button type="button" class="btn btn-ghost" id="btn-export-nofit">Download my answers (JSON)</button>
           </div>
           <p class="micro">This soft screen is not a diagnosis. Conditions like pregnancy, breastfeeding, MTC/MEN2 history, or pancreatitis history commonly mean GLP-1 is not appropriate.</p>
@@ -510,7 +510,7 @@
     <section class="screen" id="screen-admin" data-kind="admin">
       <div class="wrap">
         <h1>Lead export</h1>
-        <p class="lede">Leads stored in this browser only (<code>localStorage.bloomrx_quiz_leads</code>). Destination email for ops: <strong>shamapsychmd@gmail.com</strong>.</p>
+        <p class="lede">Leads also mirror to this browser for backup. Primary destination: <strong>After. Harbor Google Sheet</strong> (plus local browser backup).</p>
         <div class="admin-panel">
           <p><strong id="lead-count">0</strong> lead(s) in this browser.</p>
           <pre id="lead-dump">[]</pre>
@@ -528,13 +528,16 @@
   <footer>
     <div class="wrap">
       Compounded semaglutide / tirzepatide are <strong>not FDA-approved</strong> and are not the same as brand GLP-1s.
-      A licensed clinician must decide appropriateness. © 2026 BloomRx ·
+      A licensed clinician must decide appropriateness. Individual results vary. © 2026 After. Harbor ·
       <a href="./quiz.html#admin">Export leads</a>
     </div>
   </footer>
 
   <script>
   (function () {
+    // Leads → here.now Site Data (public insert) + optional Apps Script → BloomRx Leads Google Sheet.
+    // Optional realtime Sheet mirror: set SHEET_WEBAPP_URL to deployed Apps Script /exec URL.
+    var SHEET_WEBAPP_URL = "";
     var HARD_CONTRA = { pregnant: 1, breastfeeding: 1, mtc_men2: 1, pancreatitis: 1 };
     var answers = {};
     var lastLead = null;
@@ -666,45 +669,82 @@
       show("screen-q11");
     });
 
-    function storeLead(lead) {
-      try {
-        var arr = JSON.parse(localStorage.getItem("bloomrx_quiz_leads") || "[]");
-        arr.push(lead);
-        localStorage.setItem("bloomrx_quiz_leads", JSON.stringify(arr));
-        // also mirror minimal stub for older LP key
-        var stub = JSON.parse(localStorage.getItem("bloomrx_leads") || "[]");
-        stub.push({
-          name: lead.name, email: lead.email, phone: lead.phone, state: lead.state,
-          ts: lead.ts, source: "quiz", status: lead.status
-        });
-        localStorage.setItem("bloomrx_leads", JSON.stringify(stub));
-      } catch (e) {}
-    }
-
-    function buildMailto(lead) {
-      var sub = encodeURIComponent("BloomRx quiz lead — " + (lead.name || "unknown") + " (" + (lead.status || "") + ")");
-      var body = encodeURIComponent(
-        "New BloomRx quiz submission\n\n" +
-        "Status: " + lead.status + "\n" +
-        "Name: " + lead.name + "\n" +
-        "Email: " + lead.email + "\n" +
-        "Phone: " + lead.phone + "\n" +
-        "State: " + lead.state + "\n" +
-        "Price plan (if fit): $199/mo all-in\n" +
-        "Submitted: " + lead.ts + "\n\n" +
-        "Answers JSON:\n" + JSON.stringify(lead.answers, null, 2) +
-        "\n\n— BloomRx quiz stub (localStorage + mailto). Wire CRM when ready."
-      );
-      return "mailto:shamapsychmd@gmail.com?subject=" + sub + "&body=" + body;
-    }
 
     function downloadJson(obj, filename) {
       var blob = new Blob([JSON.stringify(obj, null, 2)], { type: "application/json" });
       var a = document.createElement("a");
       a.href = URL.createObjectURL(blob);
-      a.download = filename;
+      a.download = filename || "after-harbor-lead.json";
       a.click();
       setTimeout(function () { URL.revokeObjectURL(a.href); }, 500);
+    }
+
+    function storeLead(lead) {
+      try {
+        var arr = JSON.parse(localStorage.getItem("after_harbor_quiz_leads") || "[]");
+        arr.push(lead);
+        localStorage.setItem("after_harbor_quiz_leads", JSON.stringify(arr));
+        // also mirror minimal stub for older LP key
+        var stub = JSON.parse(localStorage.getItem("after_harbor_leads") || "[]");
+        stub.push({
+          name: lead.name, email: lead.email, phone: lead.phone, state: lead.state,
+          ts: lead.ts, source: "quiz", status: lead.status
+        });
+        localStorage.setItem("after_harbor_leads", JSON.stringify(stub));
+      } catch (e) {}
+    }
+
+    function leadPayload(lead) {
+      var a = lead.answers || {};
+      return {
+        timestamp: lead.ts,
+        full_name: lead.name,
+        email: lead.email,
+        phone: lead.phone,
+        state: lead.state || "",
+        age_band: a.age_band || a.age || "",
+        goal: a.goal || "",
+        insurance_status: a.insurance || a.insurance_status || "",
+        bmi_est: a.bmi_est != null ? String(a.bmi_est) : "",
+        glp1_history: a.glp1_history || a.prior_glp1 || "",
+        contraindications: Array.isArray(a.contraindications) ? a.contraindications.join("|") : (a.contraindications || ""),
+        pace: a.pace || "",
+        lead_status: lead.status,
+        status: lead.status,
+        price: lead.price_locked || "$199/mo all-in",
+        answers_json: JSON.stringify(a).slice(0, 7900),
+        source_page: "quiz",
+        sheet_id: "1tn9LiBo0dbTz0l0JmzIuRRcIGclre-v00IIqgFZSTJY"
+      };
+    }
+
+    function postToSiteData(lead) {
+      var body = leadPayload(lead);
+      return fetch("./.herenow/data/leads", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+          "Idempotency-Key": (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : (String(Date.now()) + Math.random())
+        },
+        body: JSON.stringify(body)
+      }).then(function (res) {
+        return res.json().then(function (j) {
+          return { ok: res.ok, body: j };
+        }).catch(function () { return { ok: res.ok, body: null }; });
+      }).catch(function (err) {
+        return { ok: false, error: String(err) };
+      });
+    }
+
+    function postToSheetWebapp(lead) {
+      if (!SHEET_WEBAPP_URL) return Promise.resolve({ skipped: true });
+      return fetch(SHEET_WEBAPP_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "content-type": "text/plain" },
+        body: JSON.stringify(leadPayload(lead))
+      }).then(function () { return { ok: true }; })
+        .catch(function () { return { ok: false }; });
     }
 
     $("#btn-submit").addEventListener("click", function () {
@@ -736,50 +776,44 @@
       lastLead = lead;
       storeLead(lead);
 
-      // Try FormSubmit AJAX (may require one-time email confirm by inbox owner; ignore failures)
-      try {
-        fetch("https://formsubmit.co/ajax/shamapsychmd@gmail.com", {
-          method: "POST",
-          headers: { "Content-Type": "application/json", "Accept": "application/json" },
-          body: JSON.stringify({
-            _subject: "BloomRx quiz — " + lead.status + " — " + name,
-            name: name,
-            email: email,
-            phone: phone,
-            state: lead.state,
-            status: lead.status,
-            price: "$199/mo all-in",
-            answers: JSON.stringify(lead.answers),
-            _template: "table",
-            _captcha: "false"
-          })
-        }).catch(function () {});
-      } catch (e) {}
+      var btn = $("#btn-submit");
+      btn.disabled = true;
+      btn.textContent = "Submitting…";
 
-      if (hard) {
-        show("screen-nofit");
-      } else {
-        $("#thanks-meta").textContent = "Saved locally · " + lead.ts + " · plan if fit: $199/mo all-in";
-        show("screen-thanks");
-      }
+      Promise.all([postToSiteData(lead), postToSheetWebapp(lead)]).then(function (results) {
+        var site = results[0] || {};
+        try {
+          lead._site_data_ok = !!site.ok;
+          storeLead(lead);
+        } catch (e) {}
+        if (hard) {
+          show("screen-nofit");
+        } else {
+          $("#thanks-meta").textContent = "Saved · " + lead.ts + " · $199/mo membership if approved · clinician decides";
+          show("screen-thanks");
+          // Soft navigate after a beat so user sees confirmation
+          setTimeout(function () {
+            window.location.href = "./thank-you/";
+          }, 1200);
+        }
+      }).finally(function () {
+        btn.disabled = false;
+        btn.textContent = "Submit for clinician review";
+      });
     });
 
-    $("#btn-mailto").addEventListener("click", function () {
-      if (!lastLead) return;
-      window.location.href = buildMailto(lastLead);
-    });
     $("#btn-export").addEventListener("click", function () {
       if (!lastLead) return;
-      downloadJson(lastLead, "bloomrx-quiz-" + Date.now() + ".json");
+      downloadJson(lastLead, "after-harbor-quiz-" + Date.now() + ".json");
     });
     $("#btn-export-nofit").addEventListener("click", function () {
       if (!lastLead) return;
-      downloadJson(lastLead, "bloomrx-quiz-" + Date.now() + ".json");
+      downloadJson(lastLead, "after-harbor-quiz-" + Date.now() + ".json");
     });
 
     function loadAdmin() {
       var arr = [];
-      try { arr = JSON.parse(localStorage.getItem("bloomrx_quiz_leads") || "[]"); } catch (e) {}
+      try { arr = JSON.parse(localStorage.getItem("after_harbor_quiz_leads") || "[]"); } catch (e) {}
       $("#lead-count").textContent = String(arr.length);
       $("#lead-dump").textContent = JSON.stringify(arr, null, 2);
       show("screen-admin");
@@ -787,12 +821,12 @@
     }
     $("#btn-export-all").addEventListener("click", function () {
       var arr = [];
-      try { arr = JSON.parse(localStorage.getItem("bloomrx_quiz_leads") || "[]"); } catch (e) {}
-      downloadJson(arr, "bloomrx-quiz-leads-" + Date.now() + ".json");
+      try { arr = JSON.parse(localStorage.getItem("after_harbor_quiz_leads") || "[]"); } catch (e) {}
+      downloadJson(arr, "after-harbor-quiz-leads-" + Date.now() + ".json");
     });
     $("#btn-export-csv").addEventListener("click", function () {
       var arr = [];
-      try { arr = JSON.parse(localStorage.getItem("bloomrx_quiz_leads") || "[]"); } catch (e) {}
+      try { arr = JSON.parse(localStorage.getItem("after_harbor_quiz_leads") || "[]"); } catch (e) {}
       var rows = ["ts,status,name,email,phone,state,bmi_est,goal,price"];
       arr.forEach(function (L) {
         var a = L.answers || {};
@@ -806,12 +840,12 @@
       var blob = new Blob([rows.join("\n")], { type: "text/csv" });
       var a = document.createElement("a");
       a.href = URL.createObjectURL(blob);
-      a.download = "bloomrx-quiz-leads-" + Date.now() + ".csv";
+      a.download = "after-harbor-quiz-leads-" + Date.now() + ".csv";
       a.click();
     });
     $("#btn-clear-leads").addEventListener("click", function () {
       if (!confirm("Clear all quiz leads stored in this browser?")) return;
-      localStorage.removeItem("bloomrx_quiz_leads");
+      localStorage.removeItem("after_harbor_quiz_leads");
       loadAdmin();
     });
 

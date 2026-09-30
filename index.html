@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>BloomRx · Compounded GLP-1 Care · Cash-Pay Telehealth</title>
-  <meta name="description" content="Clinician-guided compounded GLP-1 for women navigating weight when insurance says no. Flat $199/mo all-in cash-pay. See if you qualify — nothing charged before clinician approval." />
-  <meta property="og:title" content="Insurance said no. Your care doesn’t have to stop." />
-  <meta property="og:description" content="BloomRx · compounded GLP-1 · $199/mo all-in · see if you qualify." />
+  <title>After. Harbor · Women’s Midlife Metabolic Care</title>
+  <meta name="description" content="Clinician-guided midlife metabolic care. See if you qualify. Membership $199/mo all-in if prescribed. Compounded medications are not FDA-approved. Individual results vary." />
+  <meta property="og:title" content="See if personalized metabolic care is right for you" />
+  <meta property="og:description" content="After. Harbor · clinician-guided midlife care · $199/mo membership if prescribed · eligibility first." />
   <meta name="theme-color" content="#f7f3ee" />
   <style>
     :root {
@@ -36,49 +36,34 @@
       -webkit-font-smoothing: antialiased;
     }
     a { color: var(--accent); }
-    .wrap {
-      width: min(100% - 2rem, var(--max));
-      margin-inline: auto;
-    }
+    .wrap { width: min(100% - 2rem, var(--max)); margin-inline: auto; }
     .site-header {
       padding: 1rem 0;
       border-bottom: 1px solid var(--line);
       background: rgba(247, 243, 238, 0.92);
       backdrop-filter: blur(8px);
-      position: sticky;
-      top: 0;
-      z-index: 20;
+      position: sticky; top: 0; z-index: 20;
     }
     .site-header .inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      width: min(100% - 2rem, var(--max));
-      margin-inline: auto;
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+      width: min(100% - 2rem, var(--max)); margin-inline: auto;
     }
     .logo {
-      font-family: var(--serif);
-      font-weight: 600;
-      font-size: 1.35rem;
-      letter-spacing: -0.02em;
-      text-decoration: none;
-      color: var(--ink);
+      font-family: var(--serif); font-weight: 600; font-size: 1.35rem;
+      letter-spacing: -0.02em; text-decoration: none; color: var(--ink);
     }
-    .logo span { color: var(--accent); }
+    .logo .dot { color: var(--accent); }
+    .nav-links { display: none; gap: 1rem; font-size: 0.88rem; }
+    @media (min-width: 720px) {
+      .nav-links { display: flex; align-items: center; }
+      .nav-links a { color: var(--ink-muted); text-decoration: none; }
+      .nav-links a:hover { color: var(--accent); }
+    }
     .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.4rem;
-      padding: 0.85rem 1.35rem;
-      border-radius: 999px;
-      border: none;
-      font: inherit;
-      font-weight: 600;
-      font-size: 0.95rem;
-      text-decoration: none;
-      cursor: pointer;
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem;
+      padding: 0.85rem 1.35rem; border-radius: 999px; border: none;
+      font: inherit; font-weight: 600; font-size: 0.95rem;
+      text-decoration: none; cursor: pointer;
       transition: background 0.15s ease, transform 0.1s ease;
     }
     .btn:active { transform: scale(0.98); }
@@ -87,287 +72,143 @@
     .btn-hard { background: var(--ink); color: #fff; }
     .btn-hard:hover { background: #1a1512; }
     .btn-ghost {
-      background: transparent;
-      color: var(--accent);
+      background: transparent; color: var(--accent);
       border: 1px solid var(--line);
     }
     .btn-sm { padding: 0.55rem 1rem; font-size: 0.875rem; }
     .btn-block { width: 100%; }
     .hero { padding: 2.75rem 0 2.25rem; }
     .eyebrow {
-      font-size: 0.78rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--ink-muted);
-      margin: 0 0 0.85rem;
-      font-weight: 600;
+      font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--ink-muted); margin: 0 0 0.85rem; font-weight: 600;
     }
     h1, h2, h3 {
-      font-family: var(--serif);
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      line-height: 1.2;
-      margin: 0 0 0.85rem;
+      font-family: var(--serif); font-weight: 600;
+      letter-spacing: -0.02em; line-height: 1.2; margin: 0 0 0.85rem;
     }
     h1 { font-size: clamp(1.85rem, 5.5vw, 2.55rem); }
     h2 { font-size: clamp(1.45rem, 3.8vw, 1.85rem); }
     h3 { font-size: 1.1rem; font-family: var(--sans); letter-spacing: 0; }
     .lede {
-      font-size: 1.05rem;
-      color: var(--ink-muted);
-      margin: 0 0 1.35rem;
-      max-width: 38em;
+      font-size: 1.05rem; color: var(--ink-muted);
+      margin: 0 0 1.35rem; max-width: 38em;
     }
     .price-card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 1.15rem 1.25rem;
-      margin: 0 0 1.25rem;
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 1.15rem 1.25rem; margin: 0 0 1.25rem;
     }
-    .price-card strong {
-      font-size: 1.35rem;
-      font-family: var(--serif);
-    }
-    .price-card p {
-      margin: 0.4rem 0 0;
-      font-size: 0.92rem;
-      color: var(--ink-muted);
-    }
+    .price-card strong { font-size: 1.35rem; font-family: var(--serif); }
+    .price-card p { margin: 0.4rem 0 0; font-size: 0.92rem; color: var(--ink-muted); }
     .cta-stack {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 0.75rem 1rem;
+      display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1rem;
     }
-    .micro {
-      font-size: 0.85rem;
-      color: var(--ink-muted);
-      margin: 0.75rem 0 0;
-    }
+    .micro { font-size: 0.85rem; color: var(--ink-muted); margin: 0.75rem 0 0; }
     .trust-strip {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem 1.25rem;
-      padding: 1.1rem 0 0;
-      margin-top: 1.5rem;
+      display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem;
+      padding: 1.1rem 0 0; margin-top: 1.5rem;
       border-top: 1px solid var(--line);
-      font-size: 0.82rem;
-      color: var(--ink-muted);
+      font-size: 0.82rem; color: var(--ink-muted);
     }
     .trust-strip span::before {
-      content: "·";
-      margin-right: 1.25rem;
-      color: var(--line);
+      content: "·"; margin-right: 1.25rem; color: var(--line);
     }
     .trust-strip span:first-child::before { content: none; margin: 0; }
-    section.block {
-      padding: 2.5rem 0;
-      border-top: 1px solid var(--line);
+    section.block { padding: 2.5rem 0; border-top: 1px solid var(--line); }
+    .callout {
+      background: #faf4f1; border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 1rem 1.15rem;
+      margin-top: 1.25rem; font-size: 0.95rem; color: var(--ink);
     }
-    .steps {
-      display: grid;
-      gap: 1rem;
-      margin-top: 1.25rem;
+    .honesty {
+      background: var(--card); border: 1px solid var(--line);
+      border-left: 4px solid var(--accent);
+      border-radius: var(--radius); padding: 1.25rem 1.35rem; margin-top: 1rem;
     }
+    .honesty ul { margin: 0.75rem 0 0; padding: 0 0 0 1.15rem; color: var(--ink-muted); }
+    .honesty li { margin: 0.4rem 0; }
+    .steps { display: grid; gap: 1rem; margin-top: 1.25rem; }
     .step {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 1.1rem 1.2rem;
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 0.9rem;
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 1.1rem 1.2rem;
+      display: grid; grid-template-columns: auto 1fr; gap: 0.9rem;
     }
     .step-num {
-      width: 2rem;
-      height: 2rem;
-      border-radius: 50%;
-      background: var(--bg-soft);
-      color: var(--accent);
-      font-weight: 700;
-      font-size: 0.9rem;
-      display: grid;
-      place-items: center;
+      width: 2rem; height: 2rem; border-radius: 50%;
+      background: var(--bg-soft); color: var(--accent);
+      font-weight: 700; font-size: 0.9rem;
+      display: grid; place-items: center;
     }
     .step p { margin: 0.25rem 0 0; color: var(--ink-muted); font-size: 0.95rem; }
-    ul.check, ul.out {
-      margin: 0.75rem 0 0;
-      padding: 0;
-      list-style: none;
-    }
-    ul.check li, ul.out li {
-      position: relative;
-      padding: 0.4rem 0 0.4rem 1.5rem;
-    }
+    ul.check, ul.out { margin: 0.75rem 0 0; padding: 0; list-style: none; }
+    ul.check li, ul.out li { position: relative; padding: 0.4rem 0 0.4rem 1.5rem; }
     ul.check li::before {
-      content: "✓";
-      position: absolute;
-      left: 0;
-      color: var(--ok);
-      font-weight: 700;
+      content: "✓"; position: absolute; left: 0; color: var(--ok); font-weight: 700;
     }
     ul.out li::before {
-      content: "–";
-      position: absolute;
-      left: 0.15rem;
-      color: var(--ink-muted);
+      content: "–"; position: absolute; left: 0.15rem; color: var(--ink-muted);
     }
-    .two-col {
-      display: grid;
-      gap: 1.25rem;
-      margin-top: 1.25rem;
-    }
-    @media (min-width: 640px) {
-      .two-col { grid-template-columns: 1fr 1fr; }
-    }
+    .two-col { display: grid; gap: 1.25rem; margin-top: 1.25rem; }
+    @media (min-width: 640px) { .two-col { grid-template-columns: 1fr 1fr; } }
     .card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 1.2rem;
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 1.2rem;
     }
-    details.faq {
-      border-bottom: 1px solid var(--line);
-      padding: 0.85rem 0;
-    }
+    details.faq { border-bottom: 1px solid var(--line); padding: 0.85rem 0; }
     details.faq summary {
-      cursor: pointer;
-      font-weight: 600;
-      list-style: none;
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      align-items: center;
+      cursor: pointer; font-weight: 600; list-style: none;
+      display: flex; justify-content: space-between; gap: 1rem; align-items: center;
     }
     details.faq summary::-webkit-details-marker { display: none; }
-    details.faq summary::after {
-      content: "+";
-      color: var(--accent);
-      font-size: 1.25rem;
-      font-weight: 400;
-    }
+    details.faq summary::after { content: "+"; color: var(--accent); font-size: 1.25rem; font-weight: 400; }
     details.faq[open] summary::after { content: "–"; }
-    details.faq p {
-      margin: 0.65rem 0 0.25rem;
-      color: var(--ink-muted);
-      font-size: 0.95rem;
-    }
+    details.faq p { margin: 0.65rem 0 0.25rem; color: var(--ink-muted); font-size: 0.95rem; }
     .final {
-      text-align: center;
-      padding: 2.75rem 0;
-      background: var(--bg-soft);
-      border-top: 1px solid var(--line);
+      text-align: center; padding: 2.75rem 0;
+      background: var(--bg-soft); border-top: 1px solid var(--line);
     }
     .final .cta-stack { justify-content: center; }
     .final .micro { margin-top: 1rem; }
     .final .lede { margin-inline: auto; }
     footer.site-footer {
-      padding: 2rem 0 3rem;
-      font-size: 0.78rem;
-      color: var(--ink-muted);
-      line-height: 1.6;
+      padding: 2rem 0 3rem; font-size: 0.78rem;
+      color: var(--ink-muted); line-height: 1.6;
     }
     footer.site-footer p { margin: 0 0 0.85rem; }
     .sticky-cta {
-      display: none;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
+      display: none; position: fixed; bottom: 0; left: 0; right: 0;
       padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom));
       background: rgba(255, 252, 248, 0.95);
       border-top: 1px solid var(--line);
-      backdrop-filter: blur(8px);
-      z-index: 30;
+      backdrop-filter: blur(8px); z-index: 30;
     }
     .sticky-cta .inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.75rem;
-      max-width: var(--max);
-      margin-inline: auto;
+      display: flex; align-items: center; justify-content: space-between; gap: 0.75rem;
+      max-width: var(--max); margin-inline: auto;
     }
     .sticky-cta .price { font-weight: 700; font-size: 0.95rem; }
     @media (max-width: 720px) {
       .sticky-cta { display: block; }
       body { padding-bottom: 4.5rem; }
     }
-    /* Lead form */
     .form-card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 1.5rem 1.35rem;
-      margin-top: 1.25rem;
-      text-align: left;
-      max-width: 28rem;
-      margin-inline: auto;
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 1.5rem 1.35rem;
+      margin-top: 1.25rem; text-align: left;
+      max-width: 28rem; margin-inline: auto;
     }
-    .form-group {
-      margin-bottom: 1rem;
-    }
-    .form-group label {
-      display: block;
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-bottom: 0.35rem;
-      color: var(--ink);
-    }
-    .form-group input,
-    .form-group select {
-      width: 100%;
-      padding: 0.7rem 0.85rem;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      font: inherit;
-      font-size: 0.95rem;
-      background: #fff;
-      color: var(--ink);
-    }
-    .form-group input:focus,
-    .form-group select:focus {
-      outline: 2px solid var(--accent);
-      outline-offset: 1px;
-      border-color: var(--accent);
-    }
-    .form-row {
-      display: grid;
-      gap: 0.75rem;
-    }
-    @media (min-width: 480px) {
-      .form-row { grid-template-columns: 1fr 1fr; }
-    }
-    .thank-you {
-      display: none;
-      text-align: center;
-      padding: 1.5rem 0.5rem;
-    }
-    .thank-you h3 {
-      font-family: var(--serif);
-      font-size: 1.45rem;
-      margin-bottom: 0.5rem;
-    }
-    .thank-you p {
-      color: var(--ink-muted);
-      margin: 0 0 0.75rem;
-    }
-    .thank-you.visible { display: block; }
-    .lead-form.hidden { display: none; }
-    .form-error {
-      display: none;
-      color: #8b2e2e;
-      font-size: 0.85rem;
-      margin-bottom: 0.75rem;
-    }
-    .form-error.visible { display: block; }
   </style>
 </head>
 <body>
   <header class="site-header">
     <div class="inner">
-      <a class="logo" href="#top">Bloom<span>Rx</span></a>
+      <a class="logo" href="#top">After<span class="dot">.</span> Harbor</a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#how">How it works</a>
+        <a href="#fit">Who it’s for</a>
+        <a href="#medications">Safety</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </nav>
       <a class="btn btn-soft btn-sm" href="./quiz.html">See if you qualify</a>
     </div>
   </header>
@@ -376,25 +217,29 @@
     <!-- HERO -->
     <section class="hero">
       <div class="wrap">
-        <p class="eyebrow">BloomRx · GLP-1 telehealth</p>
-        <h1>Insurance said no. Your care doesn’t have to stop.</h1>
+        <p class="eyebrow">After. Harbor · Women’s midlife metabolic care</p>
+        <h1>See if personalized metabolic care is right for you</h1>
         <p class="lede">
-          For women in midlife navigating weight, appetite, and food noise — especially when coverage for obesity care is denied, dropped, or stuck in prior-auth limbo. A clinician can help you see whether compounded GLP-1 belongs in <em>your</em> plan.
+          Doctor-founded care for midlife women navigating weight, appetite, and metabolic change.
+          Start with a health review. A licensed clinician decides whether a care plan—and any medication—is appropriate for you.
         </p>
         <div class="price-card">
-          <strong>$199/mo all-in</strong>
-          <p>Cash-pay · compounded semaglutide or tirzepatide if prescribed · flat price as your dose is paced · cancel anytime*</p>
+          <strong>$199/mo membership</strong>
+          <p>Cash-pay care plan · all-in if prescribed · clinician check-ins · cancel anytime* · medication only when clinically appropriate</p>
         </div>
         <div class="cta-stack">
           <a class="btn btn-soft" href="./quiz.html">See if you qualify</a>
           <a class="btn btn-ghost" href="#how">How it works</a>
         </div>
-        <p class="micro">~2 minutes. Nothing charged before a clinician approves your plan.</p>
+        <p class="micro">
+          Prescription medications are not guaranteed. Individual results vary.
+          Compounded medications, when used, are not FDA-approved. Nothing is charged before a clinician approves your plan.
+        </p>
         <div class="trust-strip">
-          <span>Clinician-guided</span>
-          <span>Cash-pay clarity</span>
-          <span>U.S. compounding pharmacy partners</span>
-          <span>Women 35–55 focused</span>
+          <span>Doctor-founded</span>
+          <span>Licensed clinician review</span>
+          <span>18+ adults only</span>
+          <span>Partner pharmacy fulfillment</span>
         </div>
       </div>
     </section>
@@ -402,9 +247,11 @@
     <!-- BELIEF -->
     <section class="block" id="belief">
       <div class="wrap">
-        <h2>Built for the years when coverage gets harder — not easier.</h2>
+        <h2>Midlife care that meets you where you are</h2>
         <p class="lede" style="margin-bottom:0">
-          BloomRx is cash-pay GLP-1 telehealth for women whose insurance has denied, dropped, or delayed obesity medication. This page is only about compounded semaglutide or tirzepatide, prescribed and paced by a licensed clinician. Clear price. Soft next step. No shame, no miracle claims.
+          After. Harbor is clinician-guided metabolic care—not a prescription mill.
+          We focus on eligibility, honest history-taking, and a paced plan. If medication is part of your care,
+          it is only after a licensed clinician reviews your information and decides it is appropriate.
         </p>
       </div>
     </section>
@@ -412,74 +259,65 @@
     <!-- HOW IT WORKS -->
     <section class="block" id="how">
       <div class="wrap">
-        <h2>What happens next</h2>
+        <h2>How it works</h2>
         <div class="steps">
           <div class="step">
             <div class="step-num">1</div>
             <div>
-              <h3>Take the short quiz</h3>
-              <p>Share a few basics — goals, health history, and where you live. About 2 minutes.</p>
+              <h3>Share your history</h3>
+              <p>A short online intake (~2 minutes): goals, health history, soft safety screen, and where you live.</p>
             </div>
           </div>
           <div class="step">
             <div class="step-num">2</div>
             <div>
-              <h3>A clinician reviews you</h3>
-              <p>A licensed clinician reads your full picture — usually within 24 hours. They decide if compounded GLP-1 is appropriate. Not everyone is a fit.</p>
+              <h3>Clinician review</h3>
+              <p>A licensed clinician in your state reviews eligibility. They may request labs or a visit. They may decline. Not everyone is a fit.</p>
             </div>
           </div>
           <div class="step">
             <div class="step-num">3</div>
             <div>
-              <h3>Approved → charge → ship</h3>
-              <p><strong>Nothing is charged before your plan is approved.</strong> If prescribed, medication ships from a U.S. compounding pharmacy partner to your door.</p>
+              <h3>Personalized plan</h3>
+              <p>Lifestyle guidance ± medication <strong>only if appropriate</strong>. Paying for evaluation or membership does not guarantee a prescription.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <div>
+              <h3>Pharmacy fulfillment if prescribed</h3>
+              <p>If prescribed, medication is dispensed by a licensed partner pharmacy. Refills require ongoing clinical oversight. <strong>Nothing is charged before your plan is approved.</strong></p>
             </div>
           </div>
         </div>
-        <p class="micro">Shipping windows vary by pharmacy and state. Renew with a short check-in — not a restart.</p>
-      </div>
-    </section>
-
-    <!-- INCLUDED -->
-    <section class="block" id="included">
-      <div class="wrap">
-        <h2>What’s in the $199/mo all-in</h2>
-        <ul class="check">
-          <li>Compounded semaglutide <em>or</em> tirzepatide, if a clinician prescribes it</li>
-          <li>Clinician review and check-ins to pace your dose</li>
-          <li>Flat monthly cash-pay — <strong>same $199 as dose increases</strong></li>
-          <li>Door shipping from a U.S. compounding pharmacy partner</li>
-          <li>Secure messaging / care support between check-ins</li>
-          <li>Cancel anytime* — no long contract</li>
-        </ul>
-        <p class="micro" style="margin-top:1.25rem"><strong>Plain talk:</strong> This cash-pay path is not insurance billing for GLP-1. Brand-name Wegovy®, Ozempic®, or Zepbound® are not what this page sells. Compounded medication is <strong>not FDA-approved</strong> as a branded product copy. Typical cash-pay GLP-1 offers land in a ~$150–400/mo range; <strong>$199</strong> is the locked all-in price.</p>
+        <div class="callout">
+          <strong>Important:</strong> Paying for an evaluation or membership does not mean you will receive a prescription or medication. A clinician may decline.
+        </div>
       </div>
     </section>
 
     <!-- WHO IT'S FOR -->
     <section class="block" id="fit">
       <div class="wrap">
-        <h2>Who it’s for</h2>
-        <p class="lede">Primarily women in midlife (roughly 35–55) facing insurance friction around obesity care — and anyone else who wants clear cash-pay GLP-1 with a clinician in the loop. Not exclusive; we’ll be honest either way.</p>
+        <h2>Who it’s for — and who it’s not</h2>
+        <p class="lede">Adults exploring clinician-guided metabolic and lifestyle support in midlife. Not for everyone. Final eligibility rests with your clinician.</p>
         <div class="two-col">
           <div class="card">
             <h3>May be a fit if you…</h3>
             <ul class="check">
-              <li>Are navigating weight, appetite, or food noise in midlife</li>
-              <li>Hit insurance deny, drop, or prior-auth limbo for obesity meds</li>
-              <li>Want clinician-guided care, not a DIY vial</li>
-              <li>Prefer clear cash-pay over coverage roulette</li>
-              <li>Are ready for lifestyle support alongside medication</li>
+              <li>Are an adult (18+) navigating midlife weight, appetite, or metabolic change</li>
+              <li>Want clinician-guided care—not a DIY vial or algorithm-only Rx</li>
+              <li>Are open to labs, follow-up, and lifestyle support alongside any medication</li>
+              <li>Prefer clear cash-pay membership when insurance isn’t an option</li>
             </ul>
           </div>
           <div class="card">
             <h3>Usually not a fit if you…</h3>
             <ul class="out">
+              <li>Are under 18</li>
               <li>Are pregnant, trying to conceive soon, or breastfeeding</li>
-              <li>Have personal/family history of MTC or MEN2</li>
-              <li>Have pancreatitis history or other clinician-flagged risks</li>
-              <li>Want a “miracle” or guaranteed lb-loss timeline</li>
-              <li>Need brand GLP-1 via insurance on this page</li>
+              <li>Have personal/family history of MTC or MEN2, pancreatitis, or other clinician-flagged risks</li>
+              <li>Want guaranteed weight loss, a fixed lb timeline, or medication without clinical review</li>
             </ul>
           </div>
         </div>
@@ -490,79 +328,152 @@
       </div>
     </section>
 
+    <!-- MEDICATION HONESTY -->
+    <section class="block" id="medications">
+      <div class="wrap">
+        <h2>About medications we may discuss</h2>
+        <div class="honesty">
+          <p style="margin:0;color:var(--ink)">Some members may be candidates for <strong>FDA-approved</strong> therapies when clinically appropriate and available. In limited, individualized situations, a clinician may consider a <strong>compounded</strong> medication from a licensed pharmacy.</p>
+          <ul>
+            <li><strong>Compounded medications are not FDA-approved.</strong> The FDA does not review them for safety, effectiveness, or quality before they are marketed. They are <strong>not</strong> generics.</li>
+            <li>We do <strong>not</strong> claim compounded products are the same as—or the same active ingredient as—any brand-name drug (including Ozempic®, Wegovy®, Mounjaro®, or Zepbound®).</li>
+            <li>If prescribed, dispensing is by a <strong>licensed partner pharmacy</strong> (not After. Harbor as manufacturer).</li>
+            <li>Your clinician decides. You can decline medication and still discuss non-drug support where offered.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUTCOMES -->
+    <section class="block" id="outcomes">
+      <div class="wrap">
+        <h2>What to expect</h2>
+        <p class="lede" style="margin-bottom:0.75rem">
+          Change looks different for everyone. We do <strong>not</strong> guarantee a specific amount of weight loss or any particular outcome.
+          Nutrition, movement, sleep, and follow-up adherence matter. This is not a cure for obesity, diabetes, or any disease—medication, when used, may be one part of a broader care plan.
+        </p>
+        <p class="micro" style="margin:0">Individual results vary. Not everyone is prescribed medication.</p>
+      </div>
+    </section>
+
+    <!-- SAFETY -->
+    <section class="block" id="safety">
+      <div class="wrap">
+        <h2>Safety &amp; risks</h2>
+        <p class="lede">
+          Common side effects can include nausea and other digestive changes. Serious risks exist—discuss them with your clinician before starting any medication.
+          Tell your clinician if you are pregnant, breastfeeding, or have a history of thyroid cancer (including MTC), MEN2, pancreatitis, gallbladder disease, or severe stomach-emptying problems; medication may not be appropriate.
+        </p>
+        <p class="micro" style="margin:0">This website does not provide medical advice. Clinical advice comes from your licensed clinician. Seek urgent care for severe or unexpected symptoms.</p>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="block" id="pricing">
+      <div class="wrap">
+        <h2>Membership &amp; pricing</h2>
+        <ul class="check">
+          <li><strong>$199/mo cash-pay membership</strong> — care plan all-in <em>if prescribed</em> (clinician access, check-ins, and medication fulfillment when part of your approved plan)</li>
+          <li>Flat monthly price as dose is paced on this path</li>
+          <li>Labs, if required, are discussed before you pay (who bills may vary)</li>
+          <li>Shipping from the partner pharmacy when medication is prescribed</li>
+          <li><strong>Nothing charged before clinician approval</strong> of your plan</li>
+          <li>Cancel anytime* — no long contract on this cash-pay path</li>
+        </ul>
+        <p class="micro" style="margin-top:1.25rem">
+          Membership / care-plan language — this is not “buy a drug” checkout. Medication is included in the membership price only when a clinician prescribes it as part of your approved plan.
+          Confirm HSA/FSA with your plan administrator.
+        </p>
+      </div>
+    </section>
+
     <!-- FAQ -->
     <section class="block" id="faq">
       <div class="wrap">
         <h2>Questions we hear most</h2>
 
         <details class="faq" open>
-          <summary>What is compounded semaglutide / tirzepatide?</summary>
-          <p>Prepared by a licensed U.S. compounding pharmacy when prescribed for you. <strong>Compounded medications are not FDA-approved</strong> and are not the same as FDA-approved brand-name products. Your clinician decides if compounding is appropriate.</p>
+          <summary>Is this Ozempic / Wegovy / Mounjaro / Zepbound?</summary>
+          <p><strong>No.</strong> Those are separate FDA-approved brand-name products. If medication is appropriate, your clinician discusses options. Compounded products are <strong>not FDA-approved</strong> and we do <strong>not</strong> claim they are the same as any brand-name medicine.</p>
         </details>
         <details class="faq">
-          <summary>Is this the same as Ozempic / Wegovy / Zepbound?</summary>
-          <p><strong>No.</strong> We do not claim sameness or equivalence to any brand-name drug. This page is for compounded semaglutide or tirzepatide only, if prescribed.</p>
+          <summary>Am I guaranteed medication?</summary>
+          <p><strong>No.</strong> A licensed clinician reviews your information and may decline. Paying for evaluation or membership does not guarantee a prescription or shipment.</p>
         </details>
         <details class="faq">
-          <summary>How much does it cost?</summary>
-          <p><strong>$199/mo all-in</strong> on this cash-pay path — medication (if prescribed), clinician access, and shipping as described. Price stays flat as dose is paced. Confirm HSA/FSA with your plan administrator. Cash-pay GLP-1 in market often lands ~$150–400/mo; $199 is the locked all-in price.</p>
+          <summary>How fast will I lose weight?</summary>
+          <p>We don’t promise timelines or amounts. Individual results vary. Lifestyle and follow-up matter.</p>
+        </details>
+        <details class="faq">
+          <summary>Who prescribes?</summary>
+          <p>A licensed clinician licensed in your state—not an algorithm alone. After. Harbor is doctor-founded midlife care, not a questionnaire-only mill.</p>
+        </details>
+        <details class="faq">
+          <summary>Who compounds or dispenses?</summary>
+          <p>If a compounded medication is prescribed, a licensed partner pharmacy prepares and dispenses it. After. Harbor does not manufacture these medications.</p>
         </details>
         <details class="faq">
           <summary>When am I charged?</summary>
-          <p><strong>Nothing is charged before a clinician approves your plan.</strong> If approved, charge then ship.</p>
+          <p><strong>Nothing is charged before a clinician approves your plan.</strong> If approved and you continue, membership is $199/mo all-in on this cash-pay path.</p>
         </details>
         <details class="faq">
-          <summary>How fast does the process move?</summary>
-          <p>Quiz ~2 minutes → clinician review typically within 24 hours → shipping after approval. How your body responds is individual.</p>
-        </details>
-        <details class="faq">
-          <summary>What about side effects?</summary>
-          <p>Nausea, digestive changes, and other effects can occur. Your clinician reviews risks and contraindications. This page is not medical advice.</p>
+          <summary>Can I cancel?</summary>
+          <p>Yes — cancel anytime* on this cash-pay path. Cancel-anytime and charge-timing language must match live checkout.</p>
         </details>
         <details class="faq">
           <summary>Do I need insurance?</summary>
-          <p>No — this is a cash-pay path designed for people whose coverage denied, dropped, or stalled obesity medication. We do not bill insurance for GLP-1 on this page.</p>
+          <p>No — this is a cash-pay membership path. We do not bill insurance for this program on this page.</p>
         </details>
       </div>
     </section>
 
-    <!-- QUALIFY / QUIZ CTA -->
+    <!-- QUALIFY CTA -->
     <section class="final" id="qualify">
       <div class="wrap">
         <h2>See if you qualify</h2>
         <p class="lede">
-          Take a ~2-minute quiz (goals, BMI cues, meds, soft safety screen, state, contact).
-          A clinician reviews your answers. If you’re a fit, your plan is <strong>$199/mo all-in</strong> — nothing charged before approval.
+          Take a short eligibility quiz. A licensed clinician reviews your answers.
+          If you’re a fit and medication is appropriate, your membership is <strong>$199/mo all-in</strong> —
+          nothing charged before approval.
         </p>
         <div class="form-card" style="text-align:center">
-          <a class="btn btn-hard btn-block" href="./quiz.html">Start the 12-question check</a>
-          <p class="micro" style="text-align:center;margin-top:1rem">Harder CTA on-site is fine after they opt in. Soft language stays on Meta ads.</p>
+          <a class="btn btn-hard btn-block" href="./quiz.html">Start the eligibility check</a>
+          <p class="micro" style="text-align:center;margin-top:1rem">
+            Soft next step. Clinician decides. Individual results vary.
+          </p>
         </div>
       </div>
-    </section>    </section>
+    </section>
   </main>
 
   <footer class="site-footer">
     <div class="wrap">
       <p>
-        Compounded semaglutide and tirzepatide are prepared by licensed U.S. compounding pharmacies and are <strong>not FDA-approved</strong>. They are not the same as FDA-approved brand-name GLP-1 medications. BloomRx does not manufacture these medications. A licensed clinician must determine medical appropriateness; not everyone will qualify. Individual results vary. This page does not provide medical advice.
+        Compounded medications are prepared by licensed U.S. compounding pharmacies and are <strong>not FDA-approved</strong>.
+        The FDA does not review them for safety, effectiveness, or quality before marketing. They are not generics and are not the same as FDA-approved brand-name medicines.
+        After. Harbor does not manufacture these medications. A licensed clinician must determine medical appropriateness; not everyone will qualify.
+        Individual results vary. No specific weight loss is guaranteed. This website does not provide medical advice or legal advice. Clinical care is between you and your clinician.
       </p>
       <p>
-        Wegovy® and Ozempic® are trademarks of Novo Nordisk A/S. Zepbound® is a trademark of Eli Lilly and Company. BloomRx is not affiliated with or endorsed by Novo Nordisk or Eli Lilly.
+        Wegovy® and Ozempic® are trademarks of Novo Nordisk A/S. Mounjaro® and Zepbound® are trademarks of Eli Lilly and Company.
+        After. Harbor is not affiliated with or endorsed by Novo Nordisk or Eli Lilly.
       </p>
       <p>
-        *Cancel-anytime and charge-timing language must match live checkout. MVP draft — clinical + legal review before paid ads.<br />
-        © 2026 BloomRx · Privacy · Terms · Telehealth consent
+        Telehealth services provided by licensed clinicians / affiliated medical group as applicable by state.
+        Pharmacy services by licensed partner pharmacy. Adults 18+ only. Not emergency care — call 911 for emergencies.
+      </p>
+      <p>
+        *Cancel-anytime and charge-timing language must match live checkout. Marketing site draft — clinical + legal review before paid ads.<br />
+        © 2026 After. Harbor · Privacy · Terms · Telehealth consent
       </p>
     </div>
   </footer>
 
   <div class="sticky-cta" aria-hidden="false">
     <div class="inner">
-      <div class="price">$199/mo all-in</div>
+      <div class="price">$199/mo if prescribed</div>
       <a class="btn btn-soft btn-sm" href="./quiz.html">See if you qualify</a>
     </div>
   </div>
-
 </body>
 </html>

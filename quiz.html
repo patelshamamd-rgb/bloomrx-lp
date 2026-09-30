@@ -466,7 +466,7 @@
           <button type="button" class="btn btn-ghost btn-prev">Back</button>
           <button type="button" class="btn btn-hard btn-block" id="btn-submit">Submit for clinician review</button>
         </div>
-        <p class="micro">By submitting, you agree we may contact you about Ember Care. Not medical advice. Individual results vary. Compounded medications are not FDA-approved. Leads go to the Ember Care Google Sheet.</p>
+        <p class="micro">By submitting, you agree we may contact you about Ember Care. Not medical advice. Individual results vary. Compounded medications are not FDA-approved. Leads go to the BloomRx Leads Google Sheet.</p>
       </div>
     </section>
 
@@ -510,7 +510,7 @@
     <section class="screen" id="screen-admin" data-kind="admin">
       <div class="wrap">
         <h1>Lead export</h1>
-        <p class="lede">Leads also mirror to this browser for backup. Primary destination: <strong>Ember Care Google Sheet</strong> (plus local browser backup).</p>
+        <p class="lede">Leads also mirror to this browser for backup. Primary destination: <strong>BloomRx Leads Google Sheet</strong> (plus local browser backup).</p>
         <div class="admin-panel">
           <p><strong id="lead-count">0</strong> lead(s) in this browser.</p>
           <pre id="lead-dump">[]</pre>
@@ -535,10 +535,9 @@
 
   <script>
   (function () {
-    // Leads → here.now Site Data (public insert) + optional Apps Script → Ember Care Leads Google Sheet.
-    // Realtime Sheet mirror (works from Surge + here.now): paste Apps Script Web App /exec URL.
-    // Canonical sheet: 1k1wadPlwH1CUOXIXj3u0WXWDHElvmDyaBei78guqki8 (Ember Care Leads)
-    var SHEET_WEBAPP_URL = "";
+    // Leads → Apps Script web app → BloomRx Leads Google Sheet (+ optional here.now Site Data).
+    // Sheet: https://docs.google.com/spreadsheets/d/1yDe5z4f_sgi9c81xuBerQiK1Erb1k4V306uvCDZKIMo/edit
+    var SHEET_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbz4NuwoZn8aC5LCsmwFefShVghXlx6DNdn0Ic_qx06hhe-M1gTlV9BNpxtRjEbAacmw/exec";
     var HARD_CONTRA = { pregnant: 1, breastfeeding: 1, mtc_men2: 1, pancreatitis: 1 };
     var answers = {};
     var lastLead = null;
@@ -697,8 +696,10 @@
 
     function leadPayload(lead) {
       var a = lead.answers || {};
+      var answersJson = JSON.stringify(a).slice(0, 7900);
       return {
         timestamp: lead.ts,
+        name: lead.name,
         full_name: lead.name,
         email: lead.email,
         phone: lead.phone,
@@ -713,10 +714,12 @@
         lead_status: lead.status,
         status: lead.status,
         price: lead.price_locked || "$199/mo all-in",
-        answers_json: JSON.stringify(a).slice(0, 7900),
+        answers_json: answersJson,
+        quiz_json: JSON.stringify({ status: lead.status, price: lead.price_locked || "$199/mo all-in", answers: a }).slice(0, 7900),
         source_page: "quiz",
-        brand: "Ember Care",
-        sheet_id: "1k1wadPlwH1CUOXIXj3u0WXWDHElvmDyaBei78guqki8"
+        source_url: (typeof location !== "undefined" ? location.href : "quiz"),
+        brand: "BloomRx",
+        sheet_id: "1yDe5z4f_sgi9c81xuBerQiK1Erb1k4V306uvCDZKIMo"
       };
     }
 

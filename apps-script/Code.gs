@@ -1,7 +1,8 @@
 /**
  * Ember Care quiz → Google Sheet append
  * Sheet: Ember Care / Ember Care Leads (user-specified)
- * ID: 1k1wadPlwH1CUOXIXj3u0WXWDHElvmDyaBei78guqki8
+ * ID: 1k1wadPlwH1CUOXIXj3u0WXWDHElvmDyaBei78guqki8 (preferred $199 wire rows)
+ * Sync mirror w/ Funnel Verify: 1fIx5LEdy6zilHQ17k1Zz2xt3muQ8PaAP4QMfUzbbTlE
  * Deploy: Deploy → New deployment → Web app
  *   Execute as: Me
  *   Who has access: Anyone

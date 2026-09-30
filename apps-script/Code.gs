@@ -1,13 +1,13 @@
 /**
- * After. Harbor quiz → Google Sheet append
- * Sheet: After. Harbor / BloomRx Leads (user-specified)
- * ID: 1Jt7Z7f_Pypyh8km37pv43-j0KdFrp9MKjNESwrPcU58
+ * Ember Care quiz → Google Sheet append
+ * Sheet: Ember Care / Ember Care Leads (user-specified)
+ * ID: 1k1wadPlwH1CUOXIXj3u0WXWDHElvmDyaBei78guqki8
  * Deploy: Deploy → New deployment → Web app
  *   Execute as: Me
  *   Who has access: Anyone
  * Then paste the Web App URL into quiz.html SHEET_WEBAPP_URL
  */
-var SHEET_ID = '1Jt7Z7f_Pypyh8km37pv43-j0KdFrp9MKjNESwrPcU58';
+var SHEET_ID = '1k1wadPlwH1CUOXIXj3u0WXWDHElvmDyaBei78guqki8';
 var SHEET_NAME = 'Leads';
 
 function ensureSheet_() {
@@ -53,7 +53,7 @@ function doPost(e) {
       data.price || '$199/mo membership if prescribed',
       typeof data.answers_json === 'string' ? data.answers_json : JSON.stringify(data.answers || {}),
       data.source_page || 'quiz',
-      data.brand || 'After. Harbor'
+      data.brand || 'Ember Care'
     ]);
     return ContentService
       .createTextOutput(JSON.stringify({ ok: true }))
@@ -68,7 +68,7 @@ function doPost(e) {
 function doGet() {
   ensureSheet_();
   return ContentService
-    .createTextOutput(JSON.stringify({ ok: true, service: 'After. Harbor leads', sheetId: SHEET_ID }))
+    .createTextOutput(JSON.stringify({ ok: true, service: 'Ember Care leads', sheetId: SHEET_ID }))
     .setMimeType(ContentService.MimeType.JSON);
 }
 

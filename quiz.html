@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>See if you qualify · After. Harbor</title>
-  <meta name="description" content="~2-minute After. Harbor eligibility quiz. A licensed clinician reviews your answers. $199/mo membership if prescribed — nothing charged before approval. Compounded medications are not FDA-approved." />
+  <title>See if you qualify · Ember Care</title>
+  <meta name="description" content="~2-minute Ember Care eligibility quiz. A licensed clinician reviews your answers. $199/mo membership if prescribed — nothing charged before approval. Compounded medications are not FDA-approved." />
   <meta name="theme-color" content="#f7f3ee" />
   <style>
     :root {
@@ -186,7 +186,7 @@
 <body>
   <header class="site-header">
     <div class="inner">
-      <a class="logo" href="./">After<span class="dot">.</span> Harbor</a>
+      <a class="logo" href="./">Ember Care</a>
       <span class="price-chip">$199/mo all-in</span>
     </div>
   </header>
@@ -205,7 +205,7 @@
     <!-- INTRO -->
     <section class="screen active" id="screen-intro" data-kind="intro">
       <div class="wrap">
-        <h1>See if After. Harbor care fits you</h1>
+        <h1>See if Ember Care fits you</h1>
         <p class="lede">
           Twelve short questions. A licensed clinician reviews your answers — usually within 24 hours.
           If you’re a fit and medication is appropriate, membership is <strong>$199/mo all-in</strong>. Nothing charged before clinician approval. A clinician may decline.
@@ -448,7 +448,7 @@
     <section class="screen" id="screen-q12" data-q="12" data-key="contact">
       <div class="wrap">
         <p class="q-label">Best contact for clinician follow-up</p>
-        <p class="hint">We’ll only use this to reach you about your After. Harbor eligibility review.</p>
+        <p class="hint">We’ll only use this to reach you about your Ember Care eligibility review.</p>
         <div class="form-group">
           <label for="name">Full name</label>
           <input type="text" id="name" autocomplete="name" placeholder="Jane Doe" />
@@ -466,7 +466,7 @@
           <button type="button" class="btn btn-ghost btn-prev">Back</button>
           <button type="button" class="btn btn-hard btn-block" id="btn-submit">Submit for clinician review</button>
         </div>
-        <p class="micro">By submitting, you agree we may contact you about After. Harbor care. Not medical advice. Individual results vary. Compounded medications are not FDA-approved. Leads go to the After. Harbor Google Sheet.</p>
+        <p class="micro">By submitting, you agree we may contact you about Ember Care. Not medical advice. Individual results vary. Compounded medications are not FDA-approved. Leads go to the Ember Care Google Sheet.</p>
       </div>
     </section>
 
@@ -477,7 +477,7 @@
           <div class="icon-circle good">✓</div>
           <h2>Thank you — a clinician is reviewing</h2>
           <p class="ok">We received your quiz.</p>
-          <p>A licensed clinician will review your answers — typically within 24 hours. If you’re a fit and medication is appropriate, next step is your After. Harbor membership at <strong>$199/mo all-in</strong>.</p>
+          <p>A licensed clinician will review your answers — typically within 24 hours. If you’re a fit and medication is appropriate, next step is your Ember Care membership at <strong>$199/mo all-in</strong>.</p>
           <p><strong>Nothing is charged before approval.</strong></p>
           <div class="actions">
             <a class="btn btn-soft" href="./thank-you/">Continue</a>
@@ -495,10 +495,10 @@
         <div class="result-card">
           <div class="icon-circle soft">—</div>
           <h2>We’re not the right fit right now</h2>
-          <p>Based on what you shared, After. Harbor medication pathways are usually not appropriate right now. That doesn’t mean you’re alone — please talk with your own clinician about safer options for you.</p>
+          <p>Based on what you shared, Ember Care medication pathways are usually not appropriate right now. That doesn’t mean you’re alone — please talk with your own clinician about safer options for you.</p>
           <p>We still saved your contact so ops can follow up kindly if you asked us to, but we will <strong>not</strong> start a prescribing path from this quiz.</p>
           <div class="actions">
-            <a class="btn btn-soft" href="./">Back to After. Harbor home</a>
+            <a class="btn btn-soft" href="./">Back to Ember Care home</a>
             <button type="button" class="btn btn-ghost" id="btn-export-nofit">Download my answers (JSON)</button>
           </div>
           <p class="micro">This soft screen is not a diagnosis. Conditions like pregnancy, breastfeeding, MTC/MEN2 history, or pancreatitis history commonly mean GLP-1 is not appropriate.</p>
@@ -510,7 +510,7 @@
     <section class="screen" id="screen-admin" data-kind="admin">
       <div class="wrap">
         <h1>Lead export</h1>
-        <p class="lede">Leads also mirror to this browser for backup. Primary destination: <strong>After. Harbor Google Sheet</strong> (plus local browser backup).</p>
+        <p class="lede">Leads also mirror to this browser for backup. Primary destination: <strong>Ember Care Google Sheet</strong> (plus local browser backup).</p>
         <div class="admin-panel">
           <p><strong id="lead-count">0</strong> lead(s) in this browser.</p>
           <pre id="lead-dump">[]</pre>
@@ -528,15 +528,16 @@
   <footer>
     <div class="wrap">
       Compounded semaglutide / tirzepatide are <strong>not FDA-approved</strong> and are not the same as brand GLP-1s.
-      A licensed clinician must decide appropriateness. Individual results vary. © 2026 After. Harbor ·
+      A licensed clinician must decide appropriateness. Individual results vary. © 2026 Ember Care ·
       <a href="./quiz.html#admin">Export leads</a>
     </div>
   </footer>
 
   <script>
   (function () {
-    // Leads → here.now Site Data (public insert) + optional Apps Script → BloomRx Leads Google Sheet.
-    // Optional realtime Sheet mirror: set SHEET_WEBAPP_URL to deployed Apps Script /exec URL.
+    // Leads → here.now Site Data (public insert) + optional Apps Script → Ember Care Leads Google Sheet.
+    // Realtime Sheet mirror (works from Surge + here.now): paste Apps Script Web App /exec URL.
+    // Canonical sheet: 1k1wadPlwH1CUOXIXj3u0WXWDHElvmDyaBei78guqki8 (Ember Care Leads)
     var SHEET_WEBAPP_URL = "";
     var HARD_CONTRA = { pregnant: 1, breastfeeding: 1, mtc_men2: 1, pancreatitis: 1 };
     var answers = {};
@@ -674,23 +675,23 @@
       var blob = new Blob([JSON.stringify(obj, null, 2)], { type: "application/json" });
       var a = document.createElement("a");
       a.href = URL.createObjectURL(blob);
-      a.download = filename || "after-harbor-lead.json";
+      a.download = filename || "ember-care-lead.json";
       a.click();
       setTimeout(function () { URL.revokeObjectURL(a.href); }, 500);
     }
 
     function storeLead(lead) {
       try {
-        var arr = JSON.parse(localStorage.getItem("after_harbor_quiz_leads") || "[]");
+        var arr = JSON.parse(localStorage.getItem("ember_care_quiz_leads") || "[]");
         arr.push(lead);
-        localStorage.setItem("after_harbor_quiz_leads", JSON.stringify(arr));
+        localStorage.setItem("ember_care_quiz_leads", JSON.stringify(arr));
         // also mirror minimal stub for older LP key
-        var stub = JSON.parse(localStorage.getItem("after_harbor_leads") || "[]");
+        var stub = JSON.parse(localStorage.getItem("ember_care_leads") || "[]");
         stub.push({
           name: lead.name, email: lead.email, phone: lead.phone, state: lead.state,
           ts: lead.ts, source: "quiz", status: lead.status
         });
-        localStorage.setItem("after_harbor_leads", JSON.stringify(stub));
+        localStorage.setItem("ember_care_leads", JSON.stringify(stub));
       } catch (e) {}
     }
 
@@ -714,19 +715,44 @@
         price: lead.price_locked || "$199/mo all-in",
         answers_json: JSON.stringify(a).slice(0, 7900),
         source_page: "quiz",
-        sheet_id: "1tn9LiBo0dbTz0l0JmzIuRRcIGclre-v00IIqgFZSTJY"
+        brand: "Ember Care",
+        sheet_id: "1k1wadPlwH1CUOXIXj3u0WXWDHElvmDyaBei78guqki8"
+      };
+    }
+
+    // here.now Site Data schema rejects unknown fields (status, brand, sheet_id)
+    function siteDataPayload(lead) {
+      var p = leadPayload(lead);
+      return {
+        timestamp: p.timestamp,
+        full_name: p.full_name,
+        email: p.email,
+        phone: p.phone,
+        state: p.state,
+        age_band: p.age_band,
+        goal: p.goal,
+        insurance_status: p.insurance_status,
+        bmi_est: p.bmi_est,
+        glp1_history: p.glp1_history,
+        contraindications: p.contraindications,
+        pace: p.pace,
+        price: p.price,
+        answers_json: p.answers_json,
+        source_page: p.source_page,
+        lead_status: p.lead_status
       };
     }
 
     function postToSiteData(lead) {
-      var body = leadPayload(lead);
-      return fetch("./.herenow/data/leads", {
+      // Same-origin Site Data on here.now hosts. Cross-origin hosts rely on Apps Script SHEET_WEBAPP_URL.
+      var endpoint = "./.herenow/data/leads";
+      return fetch(endpoint, {
         method: "POST",
         headers: {
           "content-type": "application/json",
           "Idempotency-Key": (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : (String(Date.now()) + Math.random())
         },
-        body: JSON.stringify(body)
+        body: JSON.stringify(siteDataPayload(lead))
       }).then(function (res) {
         return res.json().then(function (j) {
           return { ok: res.ok, body: j };
@@ -804,16 +830,16 @@
 
     $("#btn-export").addEventListener("click", function () {
       if (!lastLead) return;
-      downloadJson(lastLead, "after-harbor-quiz-" + Date.now() + ".json");
+      downloadJson(lastLead, "ember-care-quiz-" + Date.now() + ".json");
     });
     $("#btn-export-nofit").addEventListener("click", function () {
       if (!lastLead) return;
-      downloadJson(lastLead, "after-harbor-quiz-" + Date.now() + ".json");
+      downloadJson(lastLead, "ember-care-quiz-" + Date.now() + ".json");
     });
 
     function loadAdmin() {
       var arr = [];
-      try { arr = JSON.parse(localStorage.getItem("after_harbor_quiz_leads") || "[]"); } catch (e) {}
+      try { arr = JSON.parse(localStorage.getItem("ember_care_quiz_leads") || "[]"); } catch (e) {}
       $("#lead-count").textContent = String(arr.length);
       $("#lead-dump").textContent = JSON.stringify(arr, null, 2);
       show("screen-admin");
@@ -821,12 +847,12 @@
     }
     $("#btn-export-all").addEventListener("click", function () {
       var arr = [];
-      try { arr = JSON.parse(localStorage.getItem("after_harbor_quiz_leads") || "[]"); } catch (e) {}
-      downloadJson(arr, "after-harbor-quiz-leads-" + Date.now() + ".json");
+      try { arr = JSON.parse(localStorage.getItem("ember_care_quiz_leads") || "[]"); } catch (e) {}
+      downloadJson(arr, "ember-care-quiz-leads-" + Date.now() + ".json");
     });
     $("#btn-export-csv").addEventListener("click", function () {
       var arr = [];
-      try { arr = JSON.parse(localStorage.getItem("after_harbor_quiz_leads") || "[]"); } catch (e) {}
+      try { arr = JSON.parse(localStorage.getItem("ember_care_quiz_leads") || "[]"); } catch (e) {}
       var rows = ["ts,status,name,email,phone,state,bmi_est,goal,price"];
       arr.forEach(function (L) {
         var a = L.answers || {};
@@ -840,12 +866,12 @@
       var blob = new Blob([rows.join("\n")], { type: "text/csv" });
       var a = document.createElement("a");
       a.href = URL.createObjectURL(blob);
-      a.download = "after-harbor-quiz-leads-" + Date.now() + ".csv";
+      a.download = "ember-care-quiz-leads-" + Date.now() + ".csv";
       a.click();
     });
     $("#btn-clear-leads").addEventListener("click", function () {
       if (!confirm("Clear all quiz leads stored in this browser?")) return;
-      localStorage.removeItem("after_harbor_quiz_leads");
+      localStorage.removeItem("ember_care_quiz_leads");
       loadAdmin();
     });
 

@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""Export here.now Site Data leads → CSV (upload to Drive as Google Sheet via MCP/create_file)."""
+"""Export here.now Site Data leads → CSV for Ember Care Leads Google Sheet."""
 import csv, io, json, os, urllib.request
 from pathlib import Path
 
-SLUG = os.environ.get("BLOOMRX_HN_SLUG", "ivory-wreath-22bv")
+SLUG = os.environ.get("EMBER_CARE_HN_SLUG", "ivory-wreath-22bv")
+SHEET_ID = "1k1wadPlwH1CUOXIXj3u0WXWDHElvmDyaBei78guqki8"
 API_KEY = Path.home().joinpath(".herenow/credentials").read_text().strip()
-OUT = Path("/tmp/bloomrx-leads-export.csv")
+OUT = Path("/tmp/ember-care-leads-export.csv")
 COLS = [
   "timestamp","full_name","email","phone","state","age_band","goal","insurance_status",
   "bmi_est","glp1_history","contraindications","pace","lead_status","price",
@@ -13,8 +14,8 @@ COLS = [
 ]
 
 req = urllib.request.Request(
-  f"https://here.now/api/v1/publishes/{SLUG}/data/leads?limit=100",
-  headers={"Authorization": f"Bearer {API_KEY}", "X-HereNow-Client": "cursor/bloomrx-funnel"},
+  f"https://here.now/api/v1/publishes/{SLUG}/data/leads?limit=200",
+  headers={"Authorization": f"Bearer {API_KEY}", "X-HereNow-Client": "cursor/ember-care"},
 )
 with urllib.request.urlopen(req, timeout=60) as r:
   data = json.load(r)
@@ -29,4 +30,5 @@ for rec in data.get("records", []):
   w.writerow(row)
 OUT.write_text(buf.getvalue())
 print(f"Wrote {OUT} ({len(data.get('records', []))} leads)")
-print("Upload CSV to Drive as Google Sheet (create_file text/csv) or open and copy into BloomRx Leads Sync.")
+print(f"Canonical sheet: https://docs.google.com/spreadsheets/d/{SHEET_ID}/edit")
+print("Realtime: deploy apps-script/Code.gs as Web App → paste /exec into quiz.html SHEET_WEBAPP_URL")

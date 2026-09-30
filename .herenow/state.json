@@ -1,0 +1,14 @@
+{
+  "publishes": {
+    "ivory-wreath-22bv": {
+      "siteUrl": "https://ivory-wreath-22bv.here.now/",
+      "versionId": "01M3QZ6SPAHC7D6ANTR9A0PJCJ",
+      "path": "/tmp/ember-care-site"
+    },
+    "evoked-vault-vxpn": {
+      "siteUrl": "https://evoked-vault-vxpn.here.now/",
+      "versionId": "01M3QZ6Y5D51VV7Q689HP3HYBE",
+      "path": "/tmp/ember-care-site"
+    }
+  }
+}

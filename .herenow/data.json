@@ -2,77 +2,22 @@
   "collections": {
     "leads": {
       "fields": {
-        "timestamp": {
-          "type": "string",
-          "required": true,
-          "maxLength": 40
-        },
-        "full_name": {
-          "type": "string",
-          "required": true,
-          "maxLength": 120,
-          "trim": true
-        },
-        "email": {
-          "type": "email",
-          "required": true
-        },
-        "phone": {
-          "type": "string",
-          "required": true,
-          "maxLength": 40,
-          "trim": true
-        },
-        "state": {
-          "type": "string",
-          "required": true,
-          "maxLength": 4
-        },
-        "age_band": {
-          "type": "string",
-          "maxLength": 40
-        },
-        "goal": {
-          "type": "string",
-          "maxLength": 80
-        },
-        "insurance_status": {
-          "type": "string",
-          "maxLength": 80
-        },
-        "bmi_est": {
-          "type": "string",
-          "maxLength": 20
-        },
-        "glp1_history": {
-          "type": "string",
-          "maxLength": 80
-        },
-        "contraindications": {
-          "type": "string",
-          "maxLength": 500
-        },
-        "pace": {
-          "type": "string",
-          "maxLength": 40
-        },
-        "price": {
-          "type": "string",
-          "maxLength": 40
-        },
-        "answers_json": {
-          "type": "string",
-          "maxLength": 8000
-        },
-        "source_page": {
-          "type": "string",
-          "maxLength": 40
-        },
-        "lead_status": {
-          "type": "string",
-          "required": true,
-          "maxLength": 40
-        }
+        "timestamp": { "type": "string", "required": true, "maxLength": 40 },
+        "full_name": { "type": "string", "required": true, "maxLength": 120, "trim": true },
+        "email": { "type": "email", "required": true },
+        "phone": { "type": "string", "required": true, "maxLength": 40, "trim": true },
+        "state": { "type": "string", "required": true, "maxLength": 4 },
+        "age_band": { "type": "string", "maxLength": 40 },
+        "goal": { "type": "string", "maxLength": 80 },
+        "insurance_status": { "type": "string", "maxLength": 80 },
+        "bmi_est": { "type": "string", "maxLength": 20 },
+        "glp1_history": { "type": "string", "maxLength": 80 },
+        "contraindications": { "type": "string", "maxLength": 500 },
+        "pace": { "type": "string", "maxLength": 40 },
+        "price": { "type": "string", "maxLength": 40 },
+        "answers_json": { "type": "string", "maxLength": 8000 },
+        "source_page": { "type": "string", "maxLength": 40 },
+        "lead_status": { "type": "string", "required": true, "maxLength": 40 }
       },
       "access": {
         "read": "owner",
